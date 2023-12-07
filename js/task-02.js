@@ -15,4 +15,4 @@ const itemList = ingredients.map((ingredient) => {
   return itemEl;
 });
 
-document.querySelector("#ingredients").append(...itemList);
+document.getElementById("ingredients").append(...itemList);

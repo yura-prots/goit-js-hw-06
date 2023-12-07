@@ -1,6 +1,6 @@
-const nameInput = document.querySelector("#name-input");
+const nameInput = document.getElementById("name-input");
 
-const nameOutput = document.querySelector("#name-output");
+const nameOutput = document.getElementById("name-output");
 
 nameInput.addEventListener("input", (e) => {
   nameOutput.textContent = e.target.value;

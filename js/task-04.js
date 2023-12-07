@@ -1,8 +1,8 @@
 let counterValue = 0;
 
-const resultValue = document.querySelector("#value");
+const resultValue = document.getElementById("value");
 
-const counter = document.querySelector("#counter");
+const counter = document.getElementById("counter");
 
 counter.addEventListener("click", (e) => {
   if (e.target.dataset.action === "increment") {

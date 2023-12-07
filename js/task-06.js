@@ -1,4 +1,4 @@
-const validationInput = document.querySelector("#validation-input");
+const validationInput = document.getElementById("validation-input");
 
 validationInput.addEventListener("blur", (e) => {
   const validLength = validationInput.dataset.length;
