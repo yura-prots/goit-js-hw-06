@@ -13,5 +13,7 @@ loginForm.addEventListener("submit", (e) => {
       password: password.value,
     };
     console.log(data);
+
+    loginForm.reset();
   }
 });
