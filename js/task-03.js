@@ -13,19 +13,31 @@ const images = [
   },
 ];
 
-const imagesList = images.map((item) => {
-  const imageEl = document.createElement("img");
-  imageEl.src = item.url;
-  imageEl.alt = item.alt;
-  imageEl.style.width = "100%";
-  imageEl.style.height = "auto";
+const imagesList = images.map((image) => {
+  const galleryEl = document.querySelector(".gallery");
+  galleryEl.style.listStyle = "none";
 
-  const itemEl = document.createElement("li");
-  itemEl.appendChild(imageEl);
-
-  return itemEl;
+  galleryEl.insertAdjacentHTML(
+    "afterbegin",
+    `<li>
+      <img src="${image.url}" alt="${image.alt}" width="100%" height="auto">
+    </li>`
+  );
 });
 
-const gallery = document.querySelector(".gallery");
-gallery.append(...imagesList);
-gallery.style.listStyle = "none";
+// const imagesList = images.map((item) => {
+//   const imageEl = document.createElement("img");
+//   imageEl.src = item.url;
+//   imageEl.alt = item.alt;
+//   imageEl.style.width = "100%";
+//   imageEl.style.height = "auto";
+
+//   const itemEl = document.createElement("li");
+//   itemEl.appendChild(imageEl);
+
+//   return itemEl;
+// });
+
+// const gallery = document.querySelector(".gallery");
+// gallery.append(...imagesList);
+// gallery.style.listStyle = "none";
