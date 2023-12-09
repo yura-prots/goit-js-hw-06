@@ -13,17 +13,20 @@ const images = [
   },
 ];
 
-const imagesList = images.map((image) => {
-  const galleryEl = document.querySelector(".gallery");
-  galleryEl.style.listStyle = "none";
+function galleryMarkupCreator(images) {
+  return images
+    .map((image) => {
+      return `<li><img src="${image.url}" alt="${image.alt}" width="100%" height="auto"></li>`;
+    })
+    .join("");
+}
 
-  galleryEl.insertAdjacentHTML(
-    "afterbegin",
-    `<li>
-      <img src="${image.url}" alt="${image.alt}" width="100%" height="auto">
-    </li>`
-  );
-});
+const galleryMarkup = galleryMarkupCreator(images);
+
+const galleryEl = document.querySelector(".gallery");
+galleryEl.style.listStyle = "none";
+
+galleryEl.insertAdjacentHTML("afterbegin", galleryMarkup);
 
 // const imagesList = images.map((item) => {
 //   const imageEl = document.createElement("img");
